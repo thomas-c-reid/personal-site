@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thomas Reid</title>
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --panel: #ffffff;
+    --text: #14161a;
+    --muted: #5c6470;
+    --line: #e3e6ea;
+    --accent: #2f6fed;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --panel: #171a20;
+      --text: #eceef1;
+      --muted: #9aa3af;
+      --line: #262b33;
+      --accent: #7aa2f7;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  .panel {
+    width: 100%;
+    max-width: 32rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 2.25rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.06);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .tagline {
+    margin: .35rem 0 1.75rem;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  dl { margin: 0; }
+
+  .row {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    padding: .7rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  dt {
+    flex: 0 0 5.5rem;
+    color: var(--muted);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  dd {
+    margin: 0;
+    word-break: break-word;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <main class="panel">
+    <h1>Thomas Reid</h1>
+    <p class="tagline">Software Engineer &middot; Belfast, UK</p>
+
+    <dl>
+      <div class="row">
+        <dt>Email</dt>
+        <dd><a href="mailto:thomasreid10117@gmail.com">thomasreid10117@gmail.com</a></dd>
+      </div>
+      <div class="row">
+        <dt>Phone</dt>
+        <dd><a href="tel:+447901048234">07901 048234</a></dd>
+      </div>
+      <div class="row">
+        <dt>GitHub</dt>
+        <dd><a href="https://github.com/thomas-c-reid" rel="me">github.com/thomas-c-reid</a></dd>
+      </div>
+      <div class="row">
+        <dt>Location</dt>
+        <dd>Belfast, Northern Ireland</dd>
+      </div>
+    </dl>
+  </main>
+</body>
+</html>
