@@ -3,117 +3,442 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thomas Reid</title>
-<style>
-  :root {
-    --bg: #f4f5f7;
-    --panel: #ffffff;
-    --text: #14161a;
-    --muted: #5c6470;
-    --line: #e3e6ea;
-    --accent: #2f6fed;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f1115;
-      --panel: #171a20;
-      --text: #eceef1;
-      --muted: #9aa3af;
-      --line: #262b33;
-      --accent: #7aa2f7;
-    }
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1.25rem;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-  }
-
-  .panel {
-    width: 100%;
-    max-width: 32rem;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 2.25rem;
-    box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.06);
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 1.75rem;
-    letter-spacing: -0.02em;
-  }
-
-  .tagline {
-    margin: .35rem 0 1.75rem;
-    color: var(--muted);
-    font-size: 1rem;
-  }
-
-  dl { margin: 0; }
-
-  .row {
-    display: flex;
-    gap: 1rem;
-    align-items: baseline;
-    padding: .7rem 0;
-    border-top: 1px solid var(--line);
-  }
-
-  dt {
-    flex: 0 0 5.5rem;
-    color: var(--muted);
-    font-size: .8rem;
-    text-transform: uppercase;
-    letter-spacing: .06em;
-  }
-
-  dd {
-    margin: 0;
-    word-break: break-word;
-  }
-
-  a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-  a:hover { text-decoration: underline; }
-</style>
+<title>Thomas Reid · Software Engineer</title>
+<meta name="description" content="Software engineer working on LLM evaluation, agent systems and ML platform. Based in Belfast.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230A0607'/><text x='50' y='71' font-family='Helvetica,Arial' font-size='58' font-weight='700' fill='%23E0492F' text-anchor='middle'>R</text></svg>">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="panel">
-    <h1>Thomas Reid</h1>
-    <p class="tagline">Software Engineer &middot; Belfast, UK</p>
 
-    <dl>
-      <div class="row">
-        <dt>Email</dt>
-        <dd><a href="mailto:thomasreid10117@gmail.com">thomasreid10117@gmail.com</a></dd>
+<!-- ============================================================
+     BACKGROUND — the K7 drifting-gradient effect.
+     Pure CSS. Fixed behind everything, so it stays put on scroll.
+     Edit the blob colours/positions in styles.css → "BACKGROUND".
+     ============================================================ -->
+<div class="bg" aria-hidden="true">
+  <span class="blob blob--1"></span>
+  <span class="blob blob--2"></span>
+  <span class="blob blob--3"></span>
+  <span class="bg__grain"></span>
+  <span class="bg__vignette"></span>
+</div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark" href="#top" aria-label="Top">
+    <span class="nav__bang">!</span>TR
+  </a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#career">Career</a>
+    <a href="#projects">Projects</a>
+    <a href="#colophon">This&nbsp;Site</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn--solid" href="cv.pdf" download>Download CV</a>
+</header>
+
+<main>
+
+  <!-- ============================================================
+       1 — HERO
+       ============================================================ -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+
+      <div class="hero__text">
+        <p class="eyebrow">Software Engineer &middot; Belfast</p>
+
+        <h1 class="hero__name">
+          <span class="hero__name-solid">Thomas</span><span class="hero__name-light">Reid</span>
+        </h1>
+
+        <!-- CONTENT SLOT: the one-liner. Keep it to two sentences. -->
+        <p class="hero__lede">
+          I build and evaluate AI systems. Right now I own the LLM evaluation
+          platform used by every AI team at a global consulting client.
+        </p>
+
+        <p class="hero__avail">
+          <span class="pulse" aria-hidden="true"></span>
+          Open to new roles, and happy to relocate
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="cv.pdf" download>Download CV</a>
+          <a class="btn btn--ghost" href="#projects">See the work &rarr;</a>
+        </div>
       </div>
-      <div class="row">
-        <dt>Phone</dt>
-        <dd><a href="tel:+447901048234">07901 048234</a></dd>
+
+      <!-- ========================================================
+           HERO RIGHT PANEL
+           SLOT: swap this whole <div class="hero__panel"> for the
+           3D head render when it exists. Until then it holds a
+           framed terminal so the right half isn't dead space.
+           ======================================================== -->
+      <div class="hero__panel">
+        <div class="terminal">
+          <div class="terminal__bar">
+            <span class="terminal__dot"></span>
+            <span class="terminal__dot"></span>
+            <span class="terminal__dot"></span>
+            <span class="terminal__title">~/thomas-reid</span>
+          </div>
+          <pre class="terminal__body"><code><span class="t-dim">$</span> whoami
+<span class="t-out" id="typed"></span><span class="caret" aria-hidden="true"></span></code></pre>
+        </div>
       </div>
-      <div class="row">
-        <dt>GitHub</dt>
-        <dd><a href="https://github.com/thomas-c-reid" rel="me">github.com/thomas-c-reid</a></dd>
+
+    </div>
+
+    <a class="hero__scroll" href="#career" aria-label="Scroll to career">
+      <span></span>
+    </a>
+  </section>
+
+
+  <!-- ============================================================
+       2 — CAREER PATH
+       The spine. Add/remove <li class="mile"> blocks freely.
+       Only the last one carries mile--now (the glowing node).
+       ============================================================ -->
+  <section class="section" id="career">
+    <div class="wrap wrap--narrow">
+      <header class="section__head section__head--bare">
+        <p class="eyebrow">01 / The path</p>
+        <h2 class="section__title">How I got here</h2>
+      </header>
+
+      <ol class="path">
+
+        <li class="mile reveal">
+          <span class="mile__year">2013</span>
+          <div class="mile__body">
+            <h3 class="mile__title">First A at thirteen</h3>
+            <p class="mile__org">St Malachy's College, Belfast</p>
+            <p class="mile__note">
+              Sat GCSE ICT three years early and achieved an A. The interest was
+              settled well before anyone called it a career.
+            </p>
+          </div>
+        </li>
+
+        <li class="mile reveal">
+          <span class="mile__year">2019</span>
+          <div class="mile__body">
+            <h3 class="mile__title">Top of the school in Computer Science</h3>
+            <p class="mile__org">A-Levels &middot; AAB in Maths, Computer Science, Biology</p>
+            <p class="mile__note">
+              Also seven years of cross country, six days a week, and All-Ireland
+              gold with the team in 2017.
+            </p>
+          </div>
+        </li>
+
+        <li class="mile reveal">
+          <span class="mile__year">2019</span>
+          <div class="mile__body">
+            <h3 class="mile__title">Degree Apprentice, Technology Consulting</h3>
+            <p class="mile__org">PwC &middot; 20 places from around 550 applicants</p>
+            <p class="mile__note">
+              Four years of client delivery running concurrently with the degree.
+              ASDA, Network Rail, Heineken, and a pro-bono build that's still live.
+            </p>
+          </div>
+        </li>
+
+        <li class="mile reveal">
+          <span class="mile__year">2023</span>
+          <div class="mile__body">
+            <h3 class="mile__title">BSc Software Engineering, First Class</h3>
+            <p class="mile__org">Queen's University Belfast</p>
+            <p class="mile__note">
+              PwC academic scholarship. 91% in the C++ data structures and
+              algorithms module.
+            </p>
+          </div>
+        </li>
+
+        <li class="mile reveal">
+          <span class="mile__year">2023</span>
+          <div class="mile__body">
+            <h3 class="mile__title">Software Engineer</h3>
+            <p class="mile__org">Pytilia &middot; contracted to a global client</p>
+            <p class="mile__note">
+              Started on backend and E2E regression testing for a production
+              notification system. Ended up owning the evaluation platform.
+            </p>
+          </div>
+        </li>
+
+        <li class="mile reveal">
+          <span class="mile__year">2024</span>
+          <div class="mile__body">
+            <h3 class="mile__title">MSc Artificial Intelligence</h3>
+            <p class="mile__org">Ulster University &middot; part-time, final year</p>
+            <p class="mile__note">
+              Enrolled as a one-year PG Cert and extended it to a full MSc.
+              Reinforcement learning is the part I actually care about.
+            </p>
+          </div>
+        </li>
+
+        <li class="mile reveal">
+          <span class="mile__year">2025</span>
+          <div class="mile__body">
+            <h3 class="mile__title">The evaluation specialism</h3>
+            <p class="mile__org">Agentic AI &middot; evals, MCP servers, platform</p>
+            <p class="mile__note">
+              Ran a competitive vendor POC, made the build-vs-buy call, then
+              stood up and ran the on-prem platform it landed on. Led a team of four.
+            </p>
+          </div>
+        </li>
+
+        <li class="mile reveal mile--now">
+          <span class="mile__year">Now</span>
+          <div class="mile__body">
+            <h3 class="mile__title">Looking for the next one</h3>
+            <p class="mile__org">AI evaluation &middot; LLMOps &middot; agent engineering</p>
+            <p class="mile__note">
+              Ideally somewhere AI serves a durable business rather than being
+              the whole business.
+            </p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       3 — PROJECTS
+       First card is full-width (card--feature). The big outlined
+       numeral is .card__ghost — decorative, hidden from screen readers.
+       ============================================================ -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <header class="section__head section__head--bare">
+        <p class="eyebrow">02 / The work</p>
+        <h2 class="section__title">Things I've built</h2>
+      </header>
+
+      <div class="grid">
+
+        <article class="card card--feature reveal">
+          <span class="card__ghost" aria-hidden="true">01</span>
+          <h3 class="card__title">Chess Engine</h3>
+          <p class="card__what">
+            A pluggable agent ladder behind one language-agnostic protocol:
+            random, minimax, MCTS, and reference implementations in more than
+            one language to prove the protocol actually holds.
+          </p>
+          <p class="card__why">
+            In 2026 everybody has an LLM wrapper. Almost nobody hand-rolls tree search.
+          </p>
+          <ul class="tags">
+            <li class="tag">Python</li>
+            <li class="tag">MCTS</li>
+            <li class="tag">Protocol design</li>
+            <li class="tag">UCI</li>
+          </ul>
+          <a class="card__link" href="https://github.com/thomas-c-reid/Chess-Engine" target="_blank" rel="noopener">
+            View on GitHub
+            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__ghost" aria-hidden="true">02</span>
+          <h3 class="card__title">ML Pipeline on Azure</h3>
+          <p class="card__what">
+            End-to-end training pipeline on Azure ML with CI/CD, versioned model
+            deployments and a queryable endpoint. The side project closest to the day job.
+          </p>
+          <ul class="tags">
+            <li class="tag">Azure ML</li>
+            <li class="tag">MLOps</li>
+            <li class="tag">CI/CD</li>
+          </ul>
+          <a class="card__link" href="https://github.com/thomas-c-reid/machine-learning-pipeline-az" target="_blank" rel="noopener">
+            View on GitHub
+            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__ghost" aria-hidden="true">03</span>
+          <h3 class="card__title">Poker Environment</h3>
+          <p class="card__what">
+            A multi-agent, imperfect-information RL environment written from
+            scratch, including the side-pot logic that most implementations
+            quietly skip.
+          </p>
+          <ul class="tags">
+            <li class="tag">Python</li>
+            <li class="tag">RL</li>
+            <li class="tag">Postgres</li>
+          </ul>
+          <a class="card__link" href="https://github.com/thomas-c-reid/Poker-Environment" target="_blank" rel="noopener">
+            View on GitHub
+            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__ghost" aria-hidden="true">04</span>
+          <h3 class="card__title">Autonomous Navigation</h3>
+          <p class="card__what">
+            ROS 2 worker node navigating to a destination while avoiding
+            obstacles, with the pathfinding written by hand and the whole stack
+            packaged in Docker.
+          </p>
+          <ul class="tags">
+            <li class="tag">ROS 2</li>
+            <li class="tag">Docker</li>
+            <li class="tag">Linux</li>
+          </ul>
+          <a class="card__link" href="https://github.com/thomas-c-reid/com760cw2-group5" target="_blank" rel="noopener">
+            View on GitHub
+            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__ghost" aria-hidden="true">05</span>
+          <h3 class="card__title">Gaeilge Flashcards</h3>
+          <p class="card__what">
+            Offline-first PWA for learning Irish, with LLM-generated cards and
+            real sync-conflict resolution. Genuinely unfinished, and v2 is in progress.
+          </p>
+          <ul class="tags">
+            <li class="tag tag--wip">In progress</li>
+            <li class="tag">TypeScript</li>
+            <li class="tag">PWA</li>
+            <li class="tag">Offline sync</li>
+          </ul>
+          <a class="card__link" href="https://github.com/thomas-c-reid/gaeilge-flashcard" target="_blank" rel="noopener">
+            View on GitHub
+            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </article>
+
       </div>
-      <div class="row">
-        <dt>Location</dt>
-        <dd>Belfast, Northern Ireland</dd>
+
+      <p class="grid__foot">
+        More at <a href="https://github.com/thomas-c-reid" target="_blank" rel="noopener">github.com/thomas-c-reid</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       4 — COLOPHON / ABOUT THIS WEBSITE
+       The live-status panel degrades to the static values below if
+       there's no endpoint to fetch. See main.js → STATUS.
+       ============================================================ -->
+  <section class="section" id="colophon">
+    <div class="wrap">
+      <header class="section__head section__head--bare">
+        <p class="eyebrow">03 / Colophon</p>
+        <h2 class="section__title">About this website</h2>
+      </header>
+
+      <div class="colophon">
+
+        <div class="colophon__prose">
+          <p>
+            Three files. No framework, no build step, no dependencies. The whole
+            thing is hand-written HTML, one stylesheet and about forty lines of
+            JavaScript. The moving gradient behind you is CSS, not WebGL.
+          </p>
+          <p>
+            <!-- CONTENT SLOT: the build-story paragraph. -->
+            It was built with AI assistance, and I'd rather say so than pretend
+            otherwise, because I evaluate these systems for a living. I also run
+            a local setup on free models, and the interesting part is where the
+            two diverge: what the cheap tier gets right, and the specific places
+            it falls over.
+          </p>
+          <p>
+            <!-- CONTENT SLOT: the self-hosting story. -->
+            It's served from a machine in my house. That's the fun bit and also
+            the risky bit, so the static build sits on a CDN as well. If the box
+            is down, you're reading the cached copy and nothing breaks.
+          </p>
+        </div>
+
+        <aside class="colophon__panel">
+          <div class="spec">
+            <div class="spec__row"><dt>Stack</dt><dd>HTML &middot; CSS &middot; vanilla JS</dd></div>
+            <div class="spec__row"><dt>Dependencies</dt><dd>None</dd></div>
+            <div class="spec__row"><dt>Build step</dt><dd>None</dd></div>
+            <div class="spec__row"><dt>Host</dt><dd data-status="host">Home server</dd></div>
+            <div class="spec__row"><dt>Served by</dt><dd data-status="node">&ndash;</dd></div>
+            <div class="spec__row"><dt>Uptime</dt><dd data-status="uptime">&ndash;</dd></div>
+          </div>
+          <p class="spec__live">
+            <span class="pulse" aria-hidden="true"></span>
+            <span data-status="label">Static fallback, no live endpoint</span>
+          </p>
+        </aside>
+
       </div>
-    </dl>
-  </main>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       5 — CONTACT
+       ============================================================ -->
+  <section class="section section--contact" id="contact">
+    <div class="wrap wrap--narrow">
+      <p class="eyebrow">04 / Say hello</p>
+      <h2 class="contact__title">Let's talk.</h2>
+      <p class="contact__sub">
+        Open to roles in AI evaluation, LLMOps and agent engineering.
+        Based in Belfast, happy to relocate.
+      </p>
+
+      <ul class="contact__list">
+        <li>
+          <a href="mailto:thomasreid10117@gmail.com">
+            <span class="contact__key">Email</span>
+            <span class="contact__val">thomasreid10117@gmail.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/thomas-reid-7298bb219/" target="_blank" rel="noopener">
+            <span class="contact__key">LinkedIn</span>
+            <span class="contact__val">thomas-reid</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/thomas-c-reid" target="_blank" rel="noopener">
+            <span class="contact__key">GitHub</span>
+            <span class="contact__val">thomas-c-reid</span>
+          </a>
+        </li>
+        <li>
+          <a href="cv.pdf" download>
+            <span class="contact__key">CV</span>
+            <span class="contact__val">Download PDF</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span>&copy; Thomas Reid 2026</span>
+    <span class="foot__mid">Belfast</span>
+    <a href="#top">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
 </body>
 </html>
