@@ -87,27 +87,3 @@ if (out) {
     })();
   }
 }
-
-
-/* --- colophon: live status, with static fallback ----------------
-   Point STATUS at whatever the home box exposes. Expected shape:
-     { host, node, uptime }
-   If the fetch fails (box is down, or you're on the CDN copy) the
-   static values already in the HTML are left exactly as they are.
-   --------------------------------------------------------------- */
-
-const STATUS = null; // e.g. '/api/status'
-
-if (STATUS) {
-  fetch(STATUS, { signal: AbortSignal.timeout(2500) })
-    .then((r) => (r.ok ? r.json() : Promise.reject()))
-    .then((d) => {
-      Object.entries(d).forEach(([k, v]) => {
-        const el = document.querySelector(`[data-status="${k}"]`);
-        if (el) el.textContent = v;
-      });
-      const label = document.querySelector('[data-status="label"]');
-      if (label) label.textContent = 'Live — served from home';
-    })
-    .catch(() => { /* static values stand */ });
-}

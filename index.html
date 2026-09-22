@@ -337,8 +337,7 @@
 
   <!-- ============================================================
        4 — COLOPHON / ABOUT THIS WEBSITE
-       The live-status panel degrades to the static values below if
-       there's no endpoint to fetch. See main.js → STATUS.
+       All static values; no live endpoint.
        ============================================================ -->
   <section class="section" id="colophon">
     <div class="wrap">
@@ -358,16 +357,18 @@
           <p>
             <!-- CONTENT SLOT: the build-story paragraph. -->
             It was built with AI assistance, and I'd rather say so than pretend
-            otherwise, because I evaluate these systems for a living. I also run
-            a local setup on free models, and the interesting part is where the
-            two diverge: what the cheap tier gets right, and the specific places
-            it falls over.
+            otherwise &mdash; I evaluate these systems for a living. The
+            interesting part wasn't the generation; it was the review. Every
+            line that shipped got read, argued with, and cut where it deserved
+            it.
           </p>
           <p>
-            <!-- CONTENT SLOT: the self-hosting story. -->
-            It's served from a machine in my house. That's the fun bit and also
-            the risky bit, so the static build sits on a CDN as well. If the box
-            is down, you're reading the cached copy and nothing breaks.
+            <!-- CONTENT SLOT: the hosting story. -->
+            It started out served from a Proxmox VM on the machine in my house,
+            with a Cloudflare Tunnel carrying inbound requests so the router
+            never faced the internet directly. That setup was one broadband
+            outage away from being someone else's problem, so it now defaults
+            to Vercel &mdash; a git push is the entire pipeline.
           </p>
         </div>
 
@@ -376,13 +377,11 @@
             <div class="spec__row"><dt>Stack</dt><dd>HTML &middot; CSS &middot; vanilla JS</dd></div>
             <div class="spec__row"><dt>Dependencies</dt><dd>None</dd></div>
             <div class="spec__row"><dt>Build step</dt><dd>None</dd></div>
-            <div class="spec__row"><dt>Host</dt><dd data-status="host">Home server</dd></div>
-            <div class="spec__row"><dt>Served by</dt><dd data-status="node">&ndash;</dd></div>
-            <div class="spec__row"><dt>Uptime</dt><dd data-status="uptime">&ndash;</dd></div>
+            <div class="spec__row"><dt>Host</dt><dd>Vercel</dd></div>
+            <div class="spec__row"><dt>Page weight</dt><dd>~44 KB, three files</dd></div>
           </div>
           <p class="spec__live">
-            <span class="pulse" aria-hidden="true"></span>
-            <span data-status="label">Static fallback, no live endpoint</span>
+            <span>No cookies &middot; no tracking</span>
           </p>
         </aside>
 
